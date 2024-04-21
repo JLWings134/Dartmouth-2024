@@ -148,17 +148,22 @@ def handle_selection(selected_option):
     list2 = [one_q, one_a, two_q, two_a]
 
     count = 0
-    limitsx = .1
-    limitsy = .1
-    random_num = 1
+
+    counters =0
+
     for x in res2:
         
         button_question = tk.Button(root, text=x[0], command=list2[count])
         button_answer = tk.Button(root, text=x[1], command=list2[count+1])
         list_names[count] = button_question
         list_names[count+1] = button_answer
-        button_question.place(relx=random.uniform(.1, .9), rely=random.uniform(.1, .9), anchor=tk.CENTER)
-        button_answer.place(relx=random.uniform(.1, 0.9), rely=random.uniform(.1, 0.9), anchor=tk.CENTER)
+        if(counters == 0):
+            button_question.place(relx=random.uniform(.1, .5), rely=random.uniform(.1, .5), anchor=tk.CENTER)
+            button_answer.place(relx=random.uniform(.5, 0.9), rely=random.uniform(.5, 0.9), anchor=tk.CENTER)
+        if(counters == 1):
+            button_question.place(relx=random.uniform(.5, .9), rely=random.uniform(.1, .5), anchor=tk.CENTER)
+            button_answer.place(relx=random.uniform(.1, 0.5), rely=random.uniform(.5, 0.9), anchor=tk.CENTER)
+        counters+=1
         count += 2
         
         
