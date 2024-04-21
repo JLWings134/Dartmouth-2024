@@ -3,7 +3,7 @@
 ## Inspiration
 What inspired us to do this project was that we wanted to do something fun like a game. We were talking about different types of games that make learning and studying more fun. We started talking about the memory game as an option. 
 ## What it does
-This project is an app that tests the kids' knowledge of certain subjects while challenging them to know
+This project is an app that tests the kids' knowledge of certain subjects.
 ## How we built it
 We built it using the python tkinter library to create a pop-up window for kids to test their knowledge. 
 ## Challenges we ran into
