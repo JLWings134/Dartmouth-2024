@@ -7,7 +7,7 @@ root = tk.Tk()
 
 root.title("Math-ch")
 
-root.geometry('500x500')
+root.geometry('600x600')
 
 
 
