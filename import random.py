@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import ttk
 import time
 root = tk.Tk()
+from PIL import ImageTk, Image
 
 root.title("Math-ch")
 
@@ -15,32 +16,39 @@ m1q = FALSE
 m1a = FALSE
 m2q = FALSE
 m2a = FALSE
-
+m3q = FALSE
+m3a = FALSE
 
 def one_q():
     global m2q
     global m2a
     global m1q
     global m1a
+    global m3q
+    global m3a
     m1q = TRUE
     list_names[0].configure(state = tk.DISABLED, bg="grey")
-    #time.sleep(1)
+
     if m1q and m1a:
         list_names[0].configure(state = tk.DISABLED, bg="green")
         list_names[1].configure(state = tk.DISABLED, bg="green")
         m1q = FALSE
         m1a = FALSE
+    check()
 
-    if m2q == TRUE or m2a == TRUE:
-        list_names[0].configure(state = tk.NORMAL, bg="white")
-        list_names[1].configure(state = tk.NORMAL, bg="white")
-        list_names[2].configure(state = tk.NORMAL, bg="white")
-        list_names[3].configure(state = tk.NORMAL, bg="white")
+    if m2q == TRUE or m2a ==  TRUE or m3q == TRUE or m3a == TRUE:
+       
+        for x in list_names:
+            if x.cget('bg') != "green":
+                x.configure(state = tk.NORMAL, bg="white")
+        
         
         m1q = FALSE
         m1a = FALSE
         m2q = FALSE
         m2a = FALSE
+        m3q = FALSE
+        m3a = FALSE
 
 
 def one_a():
@@ -48,104 +56,223 @@ def one_a():
     global m2a
     global m1a
     global m1q
+    global m3q
+    global m3a
     m1a = TRUE
     list_names[1].configure(state = tk.DISABLED, bg="grey")
-    #time.sleep(1)
+
     if m1q and m1a:
         list_names[0].configure(state = tk.DISABLED, bg="green")
         list_names[1].configure(state = tk.DISABLED, bg="green")
         m1q = FALSE
         m1a = FALSE
-    if m2q == TRUE or m2a == TRUE:
-        list_names[0].configure(state = tk.NORMAL, bg="white")
-        list_names[1].configure(state = tk.NORMAL, bg="white")
-        list_names[2].configure(state = tk.NORMAL, bg="white")
-        list_names[3].configure(state = tk.NORMAL, bg="white")
+    check()
+    if m2q == TRUE or m2a == TRUE or m3q == TRUE or m3a == TRUE:
+        
+        for x in list_names:
+            if x.cget('bg') != "green":
+                x.configure(state = tk.NORMAL, bg="white")
+        
                 
         m1q = FALSE
         m1a = FALSE
         m2q = FALSE
         m2a = FALSE
+        m3q = FALSE
+        m3a = FALSE
 
 def two_q():
     global m2q
     global m2a
     global m1a
     global m1q
+    global m3q
+    global m3a
     m2q = TRUE
     list_names[2].configure(state = tk.DISABLED, bg="grey")
-    #time.sleep(1)
+
     if m2q and m2a:
         list_names[2].configure(state = tk.DISABLED, bg="green")
         list_names[3].configure(state = tk.DISABLED, bg="green")
         m2q = FALSE
         m2a = FALSE
-    if m1q == TRUE or m1a == TRUE:
-        list_names[0].configure(state = tk.NORMAL, bg="white")
-        list_names[1].configure(state = tk.NORMAL, bg="white")
-        list_names[2].configure(state = tk.NORMAL, bg="white")
-        list_names[3].configure(state = tk.NORMAL, bg="white")
+    check()
+    if m1q == TRUE or m1a == TRUE or m3q == TRUE or m3a == TRUE:
+        
+        for x in list_names:
+            if x.cget('bg') != "green":
+                x.configure(state = tk.NORMAL, bg="white")
+        
                 
         m1q = FALSE
         m1a = FALSE
         m2q = FALSE
         m2a = FALSE
+        m3q = FALSE
+        m3a = FALSE
 
 def two_a():
     global m2a
     global m2q
     global m1a
     global m1q
+    global m3q
+    global m3a
     m2a = TRUE
     list_names[3].configure(state = tk.DISABLED, bg="grey")
-    #time.sleep(1)
+
     if m2q and m2a:
         list_names[2].configure(state = tk.DISABLED, bg="green")
         list_names[3].configure(state = tk.DISABLED, bg="green")
         m2q = FALSE
         m2a = FALSE
-    if m1q == TRUE or m1a == TRUE:
-        list_names[0].configure(state = tk.NORMAL, bg="white")
-        list_names[1].configure(state = tk.NORMAL, bg="white")
-        list_names[2].configure(state = tk.NORMAL, bg="white")
-        list_names[3].configure(state = tk.NORMAL, bg="white")
+    check()
+    if m1q == TRUE or m1a == TRUE or m3q == TRUE or m3a == TRUE:
+        
+        for x in list_names:
+            if x.cget('bg') != "green":
+                x.configure(state = tk.NORMAL, bg="white")
+        
         m1q = FALSE
         m1a = FALSE
         m2q = FALSE
         m2a = FALSE
+        m3q = FALSE
+        m3a = FALSE
 
 
 
-#res2 = list(dict.items())
+def three_q():
+    global m2a
+    global m2q
+    global m1a
+    global m1q
+    global m3q
+    global m3a
+    m3q = TRUE
+    list_names[4].configure(state = tk.DISABLED, bg="grey")
+
+    if m3q and m3a:
+        list_names[4].configure(state = tk.DISABLED, bg="green")
+        list_names[5].configure(state = tk.DISABLED, bg="green")
+        m3q = FALSE
+        m3a = FALSE
+    check()
+    if m1q == TRUE or m1a == TRUE or m2q == TRUE or m2a == TRUE:
+       
+        for x in list_names:
+            if x.cget('bg') != "green":
+                x.configure(state = tk.NORMAL, bg="white")
+        
+        m1q = FALSE
+        m1a = FALSE
+        m2q = FALSE
+        m2a = FALSE
+        m3q = FALSE
+        m3a = FALSE
 
 
-list2 = [one_q, one_a, two_q, two_a]
 
-list_names = ["b1a", "b1q", "b2a", "b2q"]
+def three_a():
+    global m2a
+    global m2q
+    global m1a
+    global m1q
+    global m3q
+    global m3a
+    m3a = TRUE
+    list_names[5].configure(state = tk.DISABLED, bg="grey")
+
+    if m3q and m3a:
+        list_names[4].configure(state = tk.DISABLED, bg="green")
+        list_names[5].configure(state = tk.DISABLED, bg="green")
+        m3q = FALSE
+        m3a = FALSE
+    check()
+    if m1q == TRUE or m1a == TRUE or m2q == TRUE or m2a == TRUE:
+        
+        for x in list_names:
+            if x.cget('bg') != "green":
+                x.configure(state = tk.NORMAL, bg="white")
+        
+        
+        m1q = FALSE
+        m1a = FALSE
+        m2q = FALSE
+        m2a = FALSE
+        m3q = FALSE
+        m3a = FALSE
+
+
+
+
+
+def check():
+    global m2a
+    global m2q
+    global m1a
+    global m1q
+    global m3q
+    global m3a
+    global list_names
+    global win_screen
+    bcount = 0
+    for x in list_names:
+        if x.cget('bg') == "green":
+            bcount+=1
+        if bcount == 6:
+            list_names[0].destroy()
+            list_names[1].destroy()
+            list_names[2].destroy()
+            list_names[3].destroy()
+            list_names[4].destroy()
+            list_names[5].destroy()
+            win_screen = tk.Label(root, text="You Win!")
+            win_screen.configure(font=('Helvetica', 40))
+            win_screen.place(relx=.5, rely=.5, anchor=tk.CENTER)
+
+
+delete = False
+list2 = [one_q, one_a, two_q, two_a, three_q, three_a]
+
+list_names = ["b1a", "b1q", "b2a", "b2q", "b3q", "b3a"]
 def handle_selection(selected_option):
-    global res2, list2, list_names, dict
+    global res2, list2, list_names, dict, delete
 
-    # First, check and destroy any existing buttons before creating new ones
     for btn in list_names:
-        if isinstance(btn, tk.Button):  # Check if it is a button and destroy it
+        if isinstance(btn, tk.Button): 
             btn.destroy()
 
     if selected_option == "Math":
-        popup_label2.config(text="You selected Math")
+
         dict = {
             "5+5": "10",
-            "1+1": "2"
+            "1+1": "2",
+            "15*3": "45"
         }
     elif selected_option == "Science":
-        popup_label2.config(text="You selected Science")
+
         dict = {
             "Fe": "Iron",
-            "Au": "Gold"
+            "Au": "Gold",
+            "Ag": "Silver"
         }
+    elif selected_option == "Sports":
 
+        dict = {
+            "NJ Devils": "Hockey",
+            "NY Jets": "Football",
+            "Man United": "Soccer"
+        }
+    else:
+
+        delete = True
+
+        
+    next_button.configure(state = tk.NORMAL)
     res2 = list(dict.items())
-    list_names = [None, None, None, None]  # Reset list_names
-    list2 = [one_q, one_a, two_q, two_a]
+    list_names = [None, None, None, None, None, None]  
+    list2 = [one_q, one_a, two_q, two_a, three_q, three_a]
 
     count = 0
     limitsx = .1
@@ -168,54 +295,92 @@ def handle_selection(selected_option):
 
 def show_popup():
     global list_names
-    root.withdraw()  # Hide the root window
-    list_names[0].destroy()
-    list_names[1].destroy()
-    list_names[2].destroy()
-    list_names[3].destroy()
-        
-    #create_popup()
-    #root.destroy()
-    #popup_window.deiconify()  # Show the popup window
+    global delete
+    root.withdraw()  
+    if delete == TRUE:
+        list_names[0].destroy()
+        list_names[1].destroy()
+        list_names[2].destroy()
+        list_names[3].destroy()
+        list_names[4].destroy()
+        list_names[5].destroy()
+
+
+
+
+
+
+    popup_label2 = tk.Label(popup_window, text="Pick an option below!")
+    popup_label2.configure(font=('Helvetica', 15))
+
+    popup_label2.place(relx=.5, rely=.6, anchor=tk.CENTER)
+
+    if popup_label2.cget('text') == "Pick an option below!":
+        next_button.configure(state = tk.DISABLED)
+
+
 
 
 def show_root():
-    #popup_window.destroy()
-    root.deiconify()  # Show the root window
-    root.focus_force()  # Focus the root window
+    global win_screen
+
+    
+    root.deiconify() 
+    root.focus_force() 
+    win_screen.destroy()
+ 
 
 
 def create_popup():
-    # Create the popup window
+    global next_button
     popup_window = tk.Tk()
     popup_window.title("Math-Ch")
 
-    # Add widgets, labels, buttons, etc. to the popup window
     popup_label = tk.Label(popup_window, text="Welcome to Math-Ch")
-    popup_label.pack(padx=200, pady=200)
+    popup_label.configure(font=('Helvetica', 30))
+    popup_label.place(relx=.5, rely=.2, anchor=tk.CENTER)
+    popup_window.geometry('500x500')
+
+    popup_label3.configure(font=('Helvetica', 15))
+    popup_label3.place(relx=.5, rely=.4, anchor=tk.CENTER)
+    
 
     popup_label2 = tk.Label(popup_window, text="Pick an option below!")
-    popup_label2.place(relx=.5, rely=.2, anchor=tk.CENTER)
+
+    if popup_label2.cget('text') == "Pick an option below!":
+        next_button.configure(state = tk.DISABLED)
+
+    popup_label2.configure(font=('Helvetica', 15))
+
+    popup_label2.place(relx=.5, rely=.6, anchor=tk.CENTER)
 
 
 
     
 
-    options =["Math", "Science"]
+    options =["Math", "Science", "Sports"]
 
     selected_option = tk.StringVar()
     dropdown = tk.OptionMenu(popup_window, selected_option, *options, command=handle_selection)
-    dropdown.place(relx=.5, rely=.6, anchor=tk.CENTER)
-
+    dropdown.place(relx=.5, rely=.68, anchor=tk.CENTER)
 
 
 
     back_button = tk.Button(root, text="Back", command=show_popup)
     back_button.pack(pady=20)
 
-    # Create a "Next" button to proceed to the root window
+
+    win_screen = tk.Label(root, text="")
+    win_screen.place(relx=.5, rely=.5, anchor=tk.CENTER)
+
+
+
+
+
     next_button = tk.Button(popup_window, text="Next", command=show_root)
-    next_button.pack(pady=10)
+
+    next_button.place(relx=.5, rely=.9, anchor=tk.CENTER)
+
 
 
     
@@ -223,18 +388,37 @@ def create_popup():
 popup_window = tk.Tk()
 popup_window.title("Math-Ch")
 
-# Add widgets, labels, buttons, etc. to the popup window
 popup_label = tk.Label(popup_window, text="Welcome to Math-Ch")
-popup_label.pack(padx=200, pady=200)
+popup_label.configure(font=('Helvetica', 30))
+popup_label.place(relx=.5, rely=.2, anchor=tk.CENTER)
+popup_window.geometry('500x500')
+
+
+
+popup_label3 = tk.Label(popup_window, text="Select the correct pairs to win!")
+popup_label3.configure(font=('Helvetica', 15))
+popup_label3.place(relx=.5, rely=.4, anchor=tk.CENTER)
+
+
+
+
+
 
 popup_label2 = tk.Label(popup_window, text="Pick an option below!")
-popup_label2.place(relx=.5, rely=.2, anchor=tk.CENTER)
+popup_label2.configure(font=('Helvetica', 15))
+popup_label2.place(relx=.5, rely=.6, anchor=tk.CENTER)
 
-options =["Math", "Science"]
+
+
+
+options =["Math", "Science", "Sports"]
 
 selected_option = tk.StringVar()
 dropdown = tk.OptionMenu(popup_window, selected_option, *options, command=handle_selection)
-dropdown.place(relx=.5, rely=.6, anchor=tk.CENTER)
+dropdown.place(relx=.5, rely=.68, anchor=tk.CENTER)
+
+win_screen = tk.Label(root, text="")
+win_screen.place(relx=.5, rely=.5, anchor=tk.CENTER)
 
 
 
@@ -242,12 +426,14 @@ dropdown.place(relx=.5, rely=.6, anchor=tk.CENTER)
 back_button = tk.Button(root, text="Back", command=show_popup)
 back_button.pack(pady=20)
 
-# Create a "Next" button to proceed to the root window
 next_button = tk.Button(popup_window, text="Next", command=show_root)
-next_button.pack(pady=10)
 
+next_button.place(relx=.5, rely=.9, anchor=tk.CENTER)
 
+if popup_label2.cget('text') == "Pick an option below!":
+    next_button.configure(state = tk.DISABLED)
 
 root.resizable(0,0)
+popup_window.resizable(0,0)
 root.withdraw()
 root.mainloop()
