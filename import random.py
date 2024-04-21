@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import ttk
 import time
 root = tk.Tk()
-from PIL import ImageTk, Image
+
 
 root.title("Math-ch")
 
