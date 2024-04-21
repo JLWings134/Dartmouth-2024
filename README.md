@@ -1,6 +1,6 @@
 ### Dartmouth-2024
 
-**Inspiration**
+**Inspiration** 
 What inspired us to do this project was that we wanted to do something fun like a game. We were talking about different types of games that make learning and studying more fun. We started talking about the memory game as an option. 
 
 **What it does**
